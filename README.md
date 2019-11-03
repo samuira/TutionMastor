@@ -1,4 +1,4 @@
-#WorkForce
+# WorkForce
 To build and run the application follow these step:-
 
 `$ sudo docker-compose build`
