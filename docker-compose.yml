@@ -43,9 +43,10 @@ services:
 
   client:
     build:
-      context: ./angular-tution-mastor
+      context: ./angular-tution-mastor/
       dockerfile: ./Dockerfile
-    command: ["npm", "start"]
+    entrypoint: ./entrypoint.sh
+    command: ["ng", "serve","--host", "0.0.0.0"]
     ports:
       - "4200:4200"
     volumes:

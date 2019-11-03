@@ -18,7 +18,30 @@ You could face few problems related to database.
 
 `$ sudo  docker-compose run django python3 manage.py migrate`
 
-**Pgadmin4:** To setup pgadmin4 follow this steps.
+**Urls to open the website:** 
+This project is set up using nginx docker container. Also, the way this project set up, so that the frontend and backend will run on same host and port.
+
+[***Frontend url (Angular):***](http:\\127.0.0.1:8089 "http:\\127.0.0.1:8089")
+```
+http:\\127.0.0.1:8089
+```
+
+[***Backend admin panel (Django):***](http:\\127.0.0.1:8089/cadmin "http:\\127.0.0.1:8089/cadmin")
+```
+http:\\127.0.0.1:8089/cadmin
+```
+
+[***Backend default django admin pannel (Django):***](http:\\127.0.0.1:8089/cadmin/admin "http:\\127.0.0.1:8089/cadmin/admin")
+```
+http:\\127.0.0.1:8089/cadmin/admin
+```
+
+***Login credential for backend admin***
+
+
+
+**Pgadmin4:** 
+To setup pgadmin4 follow this steps.
 ```
 Url: http://127.0.0.1:5050
 Email: pgadmin@mail.com
