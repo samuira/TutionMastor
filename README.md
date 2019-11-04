@@ -36,8 +36,13 @@ http:\\127.0.0.1:8089/cadmin
 http:\\127.0.0.1:8089/cadmin/admin
 ```
 
-***Login credential for backend admin***
-
+***Login credential for backend admin:***
+```
+Url for custom admin panel: http:\\127.0.0.1:8089/cadmin
+Url for default django admin pannel: http:\\127.0.0.1:8089/cadmin/admin
+Email: admin@example.com
+Password: adminpass
+```
 
 
 **Pgadmin4:** 
