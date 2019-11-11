@@ -40,12 +40,12 @@
 
               <div class="blog-wrapper">
 
-                <div class="blog-item">
+                <div *ngFor='let blog of blogs' class="blog-item">
 
                   <div class="blog-media">
                     <div class="overlay-box">
-                      <a class="blog-image" href="blog-single.html">
-                        <img src="/assets/images/blog/blog-01.jpg" alt="" />
+                      <a class="blog-image" href="blog/{{blog.id}}">
+                        <img src="{{ blog.title_image }}" alt="" />
                         <div class="image-overlay">
                           <div class="overlay-content">
                             <div class="overlay-icon"><i class="pe-7s-link"></i></div>
@@ -56,215 +56,14 @@
                   </div>
 
                   <div class="blog-content">
-                    <h3><a href="blog-single.html" class="inverse">Blog title post with a featured image</a></h3>
+                    <h3><a href="blog/{{blog.id}}" class="inverse">{{ blog.title }}</a></h3>
                     <ul class="blog-meta">
-                      <li>by <a href="#">Admin</a></li>
-                      <li>by January 09, 2016</li>
+                      <li>by <a href="#">{{ blog.created_by.first_name }} {{blog.created_by.last_name}}</a></li>
+                      <li>by {{ blog.published_on | date : 'MMMM dd, yyyy' }}</li>
                       <li>in <a href="#">Adventure</a>, <a href="#">Backpack</a></li>
                       <li>32 comments</li>
                     </ul>
-                    <div class="blog-entry">
-                      Up branch to easily missed by do. Admiration considered acceptance too led one melancholy
-                      expression. Are will took form the nor true. Winding enjoyed minuter her letters evident use eat
-                      colonel. He attacks observe mr cottage inquiry am examine gravity. Are dear but near left was.
-                      Year kept on over so as this of. She steepest doubtful betrayed formerly him. Active one called
-                      uneasy our seeing see cousin tastes its. Ye am it formed indeed agreed relied piqued.
-                    </div>
-                    <a href="blog-single.html" class="btn btn-primary btn-sm">Read More <i
-                        class="fa fa-long-arrow-right"></i></a>
-                  </div>
-
-                </div>
-
-                <div class="blog-item">
-
-                  <div class="blog-media">
-                    <div class="overlay-box">
-                      <a class="blog-image" href="blog-single.html">
-                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                        <div class="image-overlay">
-                          <div class="overlay-content">
-                            <div class="overlay-icon"><i class="pe-7s-link"></i></div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div class="blog-content">
-                    <h3><a href="blog-single.html" class="inverse">Another blog title post with a featured image</a>
-                    </h3>
-                    <ul class="blog-meta">
-                      <li>by <a href="#">Admin</a></li>
-                      <li>by January 09, 2016</li>
-                      <li>in <a href="#">Adventure</a>, <a href="#">Backpack</a></li>
-                      <li>32 comments</li>
-                    </ul>
-                    <div class="blog-entry">
-                      Up branch to easily missed by do. Admiration considered acceptance too led one melancholy
-                      expression. Are will took form the nor true. Winding enjoyed minuter her letters evident use eat
-                      colonel. He attacks observe mr cottage inquiry am examine gravity. Are dear but near left was.
-                      Year kept on over so as this of. She steepest doubtful betrayed formerly him. Active one called
-                      uneasy our seeing see cousin tastes its. Ye am it formed indeed agreed relied piqued.
-                    </div>
-                    <a href="blog-single.html" class="btn btn-primary btn-sm">Read More <i
-                        class="fa fa-long-arrow-right"></i></a>
-                  </div>
-
-                </div>
-
-                <div class="blog-item">
-
-                  <div class="blog-media">
-                    <div id="bootstrap-carousel-slider" class="carousel slide" data-ride="carousel"
-                      data-interval="5000">
-
-                      <!-- Wrapper for slides -->
-                      <div class="carousel-inner" role="listbox">
-
-                        <!-- First slide -->
-                        <div class="item active">
-                          <div class="image">
-                            <img src="/assets/images/blog/blog-03.jpg" alt="Image" />
-                          </div>
-                          <div class="carousel-caption">
-                            <p>This is the caption for slide 1</p>
-                          </div>
-                        </div> <!-- /.item -->
-
-                        <!-- Second slide -->
-                        <div class="item">
-                          <div class="image">
-                            <img src="/assets/images/blog/blog-02.jpg" alt="Image" />
-                          </div>
-                          <div class="carousel-caption">
-                            <p>This is the caption for slide 2</p>
-                          </div>
-                        </div><!-- /.item -->
-
-                        <!-- Third slide -->
-                        <div class="item">
-                          <div class="image">
-                            <img src="/assets/images/blog/blog-01.jpg" alt="Image" />
-                          </div>
-                          <div class="carousel-caption">
-                            <p>This is the caption for slide 3</p>
-                          </div>
-                        </div><!-- /.item -->
-
-                      </div><!-- /.carousel-inner -->
-
-                      <!-- Controls -->
-                      <a class="left carousel-control" href="#bootstrap-carousel-slider" role="button"
-                        data-slide="prev">
-                        <span class="carousel-control-left"><i class="pe-7s-angle-left" aria-hidden="true"></i></span>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                      <a class="right carousel-control" href="#bootstrap-carousel-slider" role="button"
-                        data-slide="next">
-                        <span class="carousel-control-right"><i class="pe-7s-angle-right" aria-hidden="true"></i></span>
-                        <span class="sr-only">Next</span>
-                      </a>
-                    </div><!-- /.carousel -->
-
-                  </div>
-
-                  <div class="blog-content">
-                    <h3><a href="blog-single.html" class="inverse">Blog Title Post With a Slider</a></h3>
-                    <ul class="blog-meta">
-                      <li>by <a href="#">Admin</a></li>
-                      <li>by January 09, 2016</li>
-                      <li>in <a href="#">Adventure</a>, <a href="#">Backpack</a></li>
-                      <li>32 comments</li>
-                    </ul>
-                    <div class="blog-entry">
-                      Up branch to easily missed by do. Admiration considered acceptance too led one melancholy
-                      expression. Are will took form the nor true. Winding enjoyed minuter her letters evident use eat
-                      colonel. He attacks observe mr cottage inquiry am examine gravity. Are dear but near left was.
-                      Year kept on over so as this of. She steepest doubtful betrayed formerly him. Active one called
-                      uneasy our seeing see cousin tastes its. Ye am it formed indeed agreed relied piqued.
-                    </div>
-                    <a href="blog-single.html" class="btn btn-primary btn-sm">Read More <i
-                        class="fa fa-long-arrow-right"></i></a>
-                  </div>
-
-                </div>
-
-                <div class="blog-item">
-
-                  <div class="blog-content">
-                    <h3><a href="blog-single.html" class="inverse">Blog Title Post Without any Image</a></h3>
-                    <ul class="blog-meta">
-                      <li>by <a href="#">Admin</a></li>
-                      <li>by January 09, 2016</li>
-                      <li>in <a href="#">Adventure</a>, <a href="#">Backpack</a></li>
-                      <li>32 comments</li>
-                    </ul>
-                    <div class="blog-entry">
-                      Up branch to easily missed by do. Admiration considered acceptance too led one melancholy
-                      expression. Are will took form the nor true. Winding enjoyed minuter her letters evident use eat
-                      colonel. He attacks observe mr cottage inquiry am examine gravity. Are dear but near left was.
-                      Year kept on over so as this of. She steepest doubtful betrayed formerly him. Active one called
-                      uneasy our seeing see cousin tastes its. Ye am it formed indeed agreed relied piqued.
-                    </div>
-                    <a href="blog-single.html" class="btn btn-primary btn-sm">Read More <i
-                        class="fa fa-long-arrow-right"></i></a>
-                  </div>
-
-                </div>
-
-                <div class="blog-item">
-
-                  <div class="blog-media">
-                    <div class="flex-video vimeo">
-                      <iframe src="http://player.vimeo.com/video/71319358" allowfullscreen></iframe>
-                    </div>
-                  </div>
-
-                  <div class="blog-content">
-                    <h3><a href="blog-single.html" class="inverse">Blog Title Post Viemo Video</a></h3>
-                    <ul class="blog-meta">
-                      <li>by <a href="#">Admin</a></li>
-                      <li>by January 09, 2016</li>
-                      <li>in <a href="#">Adventure</a>, <a href="#">Backpack</a></li>
-                      <li>32 comments</li>
-                    </ul>
-                    <div class="blog-entry">
-                      Up branch to easily missed by do. Admiration considered acceptance too led one melancholy
-                      expression. Are will took form the nor true. Winding enjoyed minuter her letters evident use eat
-                      colonel. He attacks observe mr cottage inquiry am examine gravity. Are dear but near left was.
-                      Year kept on over so as this of. She steepest doubtful betrayed formerly him. Active one called
-                      uneasy our seeing see cousin tastes its. Ye am it formed indeed agreed relied piqued.
-                    </div>
-                    <a href="blog-single.html" class="btn btn-primary btn-sm">Read More <i
-                        class="fa fa-long-arrow-right"></i></a>
-                  </div>
-
-                </div>
-
-                <div class="blog-item">
-
-                  <div class="blog-media">
-                    <div class="flex-video youtube">
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/LGvvfOQWyHo"
-                        allowfullscreen></iframe>
-                    </div>
-                  </div>
-
-                  <div class="blog-content">
-                    <h3><a href="blog-single.html" class="inverse">Blog Title Post Youtube Video</a></h3>
-                    <ul class="blog-meta">
-                      <li>by <a href="#">Admin</a></li>
-                      <li>by January 09, 2016</li>
-                      <li>in <a href="#">Adventure</a>, <a href="#">Backpack</a></li>
-                      <li>32 comments</li>
-                    </ul>
-                    <div class="blog-entry">
-                      <p>Up branch to easily missed by do. Admiration considered acceptance too led one melancholy
-                        expression. Are will took form the nor true. Winding enjoyed minuter her letters evident use eat
-                        colonel. He attacks observe mr cottage inquiry am examine gravity. Are dear but near left was.
-                        Year kept on over so as this of. She steepest doubtful betrayed formerly him. Active one called
-                        uneasy our seeing see cousin tastes its. Ye am it formed indeed agreed relied piqued. </p>
+                    <div [innerHTML]="blog.description" class="blog-entry">
                     </div>
                     <a href="blog-single.html" class="btn btn-primary btn-sm">Read More <i
                         class="fa fa-long-arrow-right"></i></a>

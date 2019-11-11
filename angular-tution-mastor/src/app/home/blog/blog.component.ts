@@ -9,14 +9,14 @@ import { AppService } from '../../app.service';
 export class BlogComponent implements OnInit {
 
   constructor(private service:AppService) { }
-
+  blogs = null;
   ngOnInit() {
     var response = {}
-    
     this.service.PostData(response, 'blog/blog-list')
     .subscribe(result => {
-      console.log(result)
+      this.blogs = result;
     }, error => {
+      console.log(error)
     })
   }
 

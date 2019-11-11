@@ -17,16 +17,15 @@ export class AppService{
     constructor(public http : HttpClient) {
         
     }
-    GetHttpHeaders() : HttpHeaders {
+    GetHttpHeaders() {
 
         var headers: HttpHeaders = new HttpHeaders();
-        headers = headers.append('Content-Type', 'application/json');
-        headers = headers.append('x-corralation-id', '12345');
+        headers.append('Content-Type', 'application/json');
 
-        // if (localStorage.getItem('token')) {
-        //         console.log(localStorage.getItem('token'));
-        //         headers = headers.append('Authorization', `Bearer ${localStorage.getItem('token')}`);
-        // }
+        if (localStorage.getItem('token')) {
+                console.log(localStorage.getItem('token'));
+                headers = headers.append('Authorization', `Bearer ${localStorage.getItem('token')}`);
+        }
         return headers;
 
     }

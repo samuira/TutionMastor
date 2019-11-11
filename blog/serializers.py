@@ -15,5 +15,5 @@ class BlogListSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = BlogPost
-		exclude = ('id', 'is_verified',)
+		exclude = ('is_verified',)
 

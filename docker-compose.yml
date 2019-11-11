@@ -33,7 +33,7 @@ services:
     build: ./
     command: "python3 manage.py runserver 0.0.0.0:8000"
     container_name: WorkForce
-    entrypoint: /workforce/entrypoint-prod.sh
+    entrypoint: /workforce/entrypoint.sh
     depends_on:
       - postgres
     ports:
@@ -41,16 +41,17 @@ services:
     volumes:
       - ".:/workforce"
 
-  # client:
-  #   build:
-  #     context: ./angular-tution-mastor/
-  #     dockerfile: ./Dockerfile
-  #   entrypoint: ./entrypoint.sh
-  #   command: ["ng", "serve","--host", "0.0.0.0"]
-  #   ports:
-  #     - "4200:4200"
-  #   volumes:
-  #     - "./angular-tution-mastor:/usr/src/app"
+  client:
+    build:
+      context: ./angular-tution-mastor/
+      dockerfile: ./Dockerfile
+    entrypoint: ./entrypoint.sh
+    command: ["ng", "serve","--host", "0.0.0.0"]
+    restart: on-failure
+    ports:
+      - "4200:4200"
+    volumes:
+      - "./angular-tution-mastor:/usr/src/app"
 
   nginx:
     build:
@@ -65,7 +66,7 @@ services:
       - ".:/workforce"
     depends_on:
       - django
-      #- client
+      - client
 
 volumes:
   pgdata: ~
