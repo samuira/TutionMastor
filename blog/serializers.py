@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from rest_framework.validators import UniqueValidator
 from custom_admin.models import User
 from .models import BlogPost
 

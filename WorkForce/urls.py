@@ -21,10 +21,10 @@ from django.conf.urls.static import static
 
 # root directory used for frontend in nginx
 urlpatterns = [
-	path('cadmin/admin/', admin.site.urls),
-	path('cadmin/', include('custom_admin.urls')),
-	path('api/blog/', include('blog.urls')),
-	#path('api-auth/', include('rest_framework.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                  path('cadmin/admin/', admin.site.urls),
+                  path('cadmin/', include('custom_admin.urls')),
+                  path('api/', include('api.urls')),
+                  # path('api-auth/', include('rest_framework.urls')),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

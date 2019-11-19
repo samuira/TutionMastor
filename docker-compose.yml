@@ -10,7 +10,7 @@ services:
     image: dpage/pgadmin4
     ports:
       - "5050:80"
-    restart: unless-stopped
+    restart: always
     logging:
       driver: none
     volumes:
@@ -25,11 +25,12 @@ services:
     image: "postgres:9.5"
     ports:
       - "127.0.0.1:5433:5432"
-    restart: unless-stopped
+    restart: always
     volumes:
       - "pgdata:/var/lib/postgresql/data/"
 
   django:
+    restart: always
     build: ./
     command: "python3 manage.py runserver 0.0.0.0:8000"
     container_name: WorkForce
@@ -47,7 +48,7 @@ services:
       dockerfile: ./Dockerfile
     entrypoint: ./entrypoint.sh
     command: ["ng", "serve","--host", "0.0.0.0"]
-    restart: on-failure
+    restart: always
     ports:
       - "4200:4200"
     volumes:
