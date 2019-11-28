@@ -331,7 +331,7 @@ var BlogComponent = /** @class */ (function () {
     BlogComponent.prototype.ngOnInit = function () {
         var _this = this;
         var response = {};
-        this.service.PostData(response, 'blog/blog-list')
+        this.service.GetData('blog/')
             .subscribe(function (result) {
             _this.blogs = result;
         }, function (error) {

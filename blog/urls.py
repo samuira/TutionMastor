@@ -6,6 +6,6 @@ urlpatterns = [
 	# path('blog-list', BlogList.as_view(), name='blog_list'),
 ]
 router = DefaultRouter()
-router.register(r'', BlogViewSet, basename='blog')
+router.register(r'', BlogViewSet, basename='api-blog')
 urlpatterns += router.urls
 

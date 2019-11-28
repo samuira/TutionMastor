@@ -1,20 +1,20 @@
 version: "3"
 services:
 
-  pgadmin:
-    depends_on:
-      - postgres
-    environment:
-      PGADMIN_DEFAULT_EMAIL: pgadmin@mail.com
-      PGADMIN_DEFAULT_PASSWORD: pgadmin
-    image: dpage/pgadmin4
-    ports:
-      - "5050:80"
-    restart: unless-stopped
-    logging:
-      driver: none
-    volumes:
-      - "/data/pgadmin:/root/.pgadmin"
+#  pgadmin:
+#    depends_on:
+#      - postgres
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: pgadmin@mail.com
+#      PGADMIN_DEFAULT_PASSWORD: pgadmin
+#    image: dpage/pgadmin4
+#    ports:
+#      - "5050:80"
+#    restart: unless-stopped
+#    logging:
+#      driver: none
+#    volumes:
+#      - "/data/pgadmin:/root/.pgadmin"
 
   postgres:
     container_name: WorkForceDB

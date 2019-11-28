@@ -1,6 +1,5 @@
 #!/bin/sh
+npm install -g @angular/cli@7.3.8
 npm install
-npm install -g @angular/cli
-npm audit fix --force
 npm run ng build
 exec "$@"
