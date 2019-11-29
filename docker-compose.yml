@@ -27,6 +27,9 @@ services:
     volumes:
       - "pgdata:/var/lib/postgresql/data/"
 
+  redis:
+    image: "redis:alpine"
+
   django:
     build: ./
     command: "python3 manage.py runserver 0.0.0.0:8000"
@@ -64,6 +67,26 @@ services:
     depends_on:
       - django
       - client
+
+  celery:
+    build: ./
+    command: celery -A WorkForce worker -l info
+    volumes:
+      - .:/workforce
+    depends_on:
+      - postgres
+      - redis
+      - django
+
+  celery-beat:
+    build: ./
+    command: celery -A WorkForce beat -l info
+    volumes:
+      - .:/workforce
+    depends_on:
+      - postgres
+      - redis
+      - django
 
 volumes:
   pgdata: ~
