@@ -30,6 +30,15 @@ services:
   redis:
     image: "redis:alpine"
 
+  rabbit:
+    hostname: rabbit
+    image: rabbitmq:latest
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=mypass
+    ports:
+      - "5673:5672"
+
   django:
     build: ./
     command: "python3 manage.py runserver 0.0.0.0:8000"
@@ -76,16 +85,18 @@ services:
     depends_on:
       - postgres
       - redis
+      - rabbit
       - django
 
   celery-beat:
     build: ./
-    command: celery -A WorkForce beat -l info
+    command: celery -A WorkForce beat --pidfile= -l info
     volumes:
       - .:/workforce
     depends_on:
       - postgres
       - redis
+      - rabbit
       - django
 
 volumes:

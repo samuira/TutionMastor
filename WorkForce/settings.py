@@ -29,7 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -77,7 +76,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'WorkForce.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -101,9 +99,8 @@ DATABASES = {
         'PASSWORD': 'admin#123',
         'HOST': 'postgres',  # postgres service name which is mention in the docker-compose.yml
         'PORT': '5432'
-        },
+    },
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -122,7 +119,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -144,10 +140,9 @@ AUTH_USER_MODEL = 'custom_admin.User'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATIC_URL = '/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
 
 MESSAGE_LEVEL = 10
 
@@ -160,13 +155,14 @@ MESSAGE_TAGS = {
 }
 
 # Celery
-CELERY_BROKER_URL = 'redis://redis:6379'
+CELERY_BROKER_URL = 'amqp://admin:mypass@rabbit:5672'
 CELERY_RESULT_BACKEND = 'redis://redis:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 
 from celery.schedules import crontab
+
 CELERY_BEAT_SCHEDULE = {
     'hello': {
         'task': 'api.tasks.hello',
