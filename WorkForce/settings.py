@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'drf_yasg',
+    'django_celery_results',
 ]
 
 MIDDLEWARE = [
@@ -156,7 +157,9 @@ MESSAGE_TAGS = {
 
 # Celery
 CELERY_BROKER_URL = 'amqp://admin:mypass@rabbit:5672'
-CELERY_RESULT_BACKEND = 'redis://redis:6379'
+# CELERY_RESULT_BACKEND = 'redis://redis:6379'
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_CACHE_BACKEND = 'django-cache'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
