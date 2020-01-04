@@ -7,8 +7,8 @@ from django.db import models
 class UserManager(BaseUserManager):
 	def create_user(self, email, password):
 		"""
-	  	Creates and saves a User with the given username, password.
-	  	"""
+		Creates and saves a User with the given username, password.
+		"""
 		if not email:
 			raise ValueError('Users must have an username')
 		user = self.model(email=email)
