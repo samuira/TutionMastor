@@ -21,25 +21,25 @@ You could face few problems related to database.
 **Urls to open the website:** 
 This project is set up using nginx docker container. Also, the way this project set up, so that the frontend and backend will run on same host and port.
 
-[***Frontend url (Angular):***](http:\\127.0.0.1:8089 "http:\\127.0.0.1:8089")
+[***Frontend url (Angular):***](http:\\localhost:8089 "http:\\localhost:8089")
 ```
-http:\\127.0.0.1:8089
-```
-
-[***Backend admin panel (Django):***](http:\\127.0.0.1:8089/cadmin "http:\\127.0.0.1:8089/cadmin")
-```
-http:\\127.0.0.1:8089/cadmin
+http:\\localhost:8089
 ```
 
-[***Backend default django admin pannel (Django):***](http:\\127.0.0.1:8089/cadmin/admin "http:\\127.0.0.1:8089/cadmin/admin")
+[***Backend admin panel (Django):***](http:\\localhost:8089/cadmin "http:\\localhost:8089/cadmin")
 ```
-http:\\127.0.0.1:8089/cadmin/admin
+http:\\localhost:8089/cadmin
+```
+
+[***Backend default django admin pannel (Django):***](http:\\localhost:8089/cadmin/admin "http:\\localhost:8089/cadmin/admin")
+```
+http:\\localhost:8089/cadmin/admin
 ```
 
 ***Login credential for backend admin:***
 ```
-Url for custom admin panel: http:\\127.0.0.1:8089/cadmin
-Url for default django admin pannel: http:\\127.0.0.1:8089/cadmin/admin
+Url for custom admin panel: http:\\localhost:8089/cadmin
+Url for default django admin pannel: http:\\localhost:8089/cadmin/admin
 Email: admin@example.com
 Password: adminpass
 ```
@@ -48,7 +48,7 @@ Password: adminpass
 **Pgadmin4:** 
 To setup pgadmin4 follow this steps.
 ```
-Url: http://127.0.0.1:5050
+Url: http://localhost:5050
 Email: pgadmin@mail.com
 Password: pgadmin
 
