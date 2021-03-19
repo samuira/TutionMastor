@@ -16,7 +16,7 @@ daphne==2.4.0
 Django==3.0
 django-celery-results==1.1.2
 django-rest-swagger==2.2.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 drf-yasg==1.17.0
 gunicorn==19.9.0
 hyperlink==19.0.0
